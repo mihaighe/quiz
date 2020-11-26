@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+
+@keyframes blink {
+  0% {
+    background: #fa8334;
+  }
+  7% {
+    background: #8ee23f;
+  }
+  14% {
+    background: #50514f;
+  }
+  21% {
+    background: #388697;
+  }
+  28% {
+    background: #271033;
+  }
+  35% {
+    background: #ff6700;
+  }
+  42% {
+    background: #ebebeb;
+  }
+  49% {
+    background: #c0c0c0;
+  }
+  56% {
+    background: #3a6ea5;
+  }
+  63% {
+    background: #ffe882;
+  }
+  70% {
+    background: #073b3a;
+  }
+  77% {
+    background: #0b6e4f;
+  }
+  85% {
+    background: #08a045;
+  }
+  92% {
+    background: #6bbf59;
+  }
+  100% {
+    background: #fa8334;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  animation: blink 60s infinite;
+  clip-path: polygon(0% 0%, 74% 0, 91% 49%, 74% 100%, 0% 100%);
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.container {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  height: 40vh;
+}
+
+.line {
+  background-color: black;
+  margin: 4vw;
+  width: 0.35vw;
+  height: 60vh;
+}
+
+.img-question {
+  width: 12vw;
+  height: 12vw;
+}
+
+.img-answers {
+  padding-top: 7px;
+  border-top: 5px solid black;
+  margin: 30px;
+  margin-bottom: 8px;
+  width: 17vw;
+  height: 3.7vw;
+}
+
+.numbers {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 5vw;
+}
+
+.current {
+  position: relative;
+  top: 8vh;
+}
+
+.slash {
+  position: relative;
+  left: 4vh;
+}
+
+.total {
+  position: relative;
+  left: 6vh;
+  bottom: 8vh;
+}
+
+.radio {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em black;
+  transform: translateY(-0.25em);
+  outline: 0;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  transition: 0.25s;
+  border-color: black;
+}
+
+.progress-bar {
+  position: relative;
+  width: 500px;
+  height: 3em;
+  background-color: #111;
+  border-radius: 2em;
+  color: white;
+}
+
+.progress-bar::before {
+  /* content: attr(data-label); */
+  content: "Finished...";
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0.25em;
+  top: 0.25em;
+  bottom: 0.25em;
+  width: calc(var(--width, 0) * 1%);
+  min-width: 3rem;
+  max-width: calc(100% - 1em);
+  background-color: #069;
+  border-radius: 2em;
+  padding: 1em;
+}
