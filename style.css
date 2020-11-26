@@ -8,13 +8,13 @@
     background: #8ee23f;
   }
   14% {
-    background: #50514f;
+    background: #db4868;
   }
   21% {
     background: #388697;
   }
   28% {
-    background: #271033;
+    background: #9b5ebb;
   }
   35% {
     background: #ff6700;
@@ -32,7 +32,7 @@
     background: #ffe882;
   }
   70% {
-    background: #073b3a;
+    background: #1d8685;
   }
   77% {
     background: #0b6e4f;
@@ -56,25 +56,61 @@
 
 body {
   margin: 0;
-}
-
-body {
   animation: blink 60s infinite;
   clip-path: polygon(0% 0%, 74% 0, 91% 49%, 74% 100%, 0% 100%);
 
   height: 100%;
   width: 100%;
   position: absolute;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
-.container {
+.white-container {
   background-color: white;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+.up {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 97%;
+}
+
+.down {
+  height: 3%;
+}
+
+.progress-bar {
+  width: 65%;
+  height: 80%;
+  background-color: black;
+  border-radius: 20px;
+  color: black;
+  font-family: "Fredericka the Great", cursive;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar::before {
+  content: attr(data-label);
+  width: calc(var(--width, 0) * 1%);
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  height: 75%;
+  padding-left: 5px;
+  left: 2px;
+
+  min-width: 48px;
+  max-width: calc(100% - 1em);
+
+  animation: blink 60s infinite;
+  border-radius: 20px;
 }
 
 .small-container {
@@ -150,30 +186,4 @@ button {
   padding: 1em 2em;
   transition: 0.25s;
   border-color: black;
-}
-
-.progress-bar {
-  position: relative;
-  width: 500px;
-  height: 3em;
-  background-color: #111;
-  border-radius: 2em;
-  color: white;
-}
-
-.progress-bar::before {
-  /* content: attr(data-label); */
-  content: "Finished...";
-  display: flex;
-  align-items: center;
-  position: absolute;
-  left: 0.25em;
-  top: 0.25em;
-  bottom: 0.25em;
-  width: calc(var(--width, 0) * 1%);
-  min-width: 3rem;
-  max-width: calc(100% - 1em);
-  background-color: #069;
-  border-radius: 2em;
-  padding: 1em;
 }

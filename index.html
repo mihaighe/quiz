@@ -8,39 +8,37 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="small-container">
-        <div class="numbers">
-          <div class="current" id="current-question"></div>
-          <div class="slash">/</div>
-          <div class="total">24</div>
+    <div class="white-container">
+      <div class="up">
+        <div class="small-container">
+          <div class="numbers">
+            <div class="current" id="current-question"></div>
+            <div class="slash">/</div>
+            <div class="total">24</div>
+          </div>
         </div>
-      </div>
-      <div class="line"></div>
-      <div class="small-container">
-        <img class="img-question" id="img-question" />
-        <img class="img-answers" id="img-answers" />
-        <div class="radio">
-          <input type="radio" class="answer" id="a" name="answer" />
-          <input type="radio" class="answer" id="b" name="answer" />
-          <input type="radio" class="answer" id="c" name="answer" />
-          <input type="radio" class="answer" id="d" name="answer" />
-          <input type="radio" class="answer" id="e" name="answer" />
+        <div class="line"></div>
+        <div class="small-container">
+          <img class="img-question" id="img-question" />
+          <img class="img-answers" id="img-answers" />
+          <div class="radio">
+            <input type="radio" class="answer" id="a" name="answer" />
+            <input type="radio" class="answer" id="b" name="answer" />
+            <input type="radio" class="answer" id="c" name="answer" />
+            <input type="radio" class="answer" id="d" name="answer" />
+            <input type="radio" class="answer" id="e" name="answer" />
+          </div>
         </div>
+        <button class="raise" id="next">Next</button>
+        <div id="score"></div>
       </div>
 
-      <div class="top"></div>
-
-      <div class="under">
-        <div>
-          <button class="raise" id="capre">Capre</button>
-          <div id="score"></div>
-          <div
-            class="progress-bar"
-            style="--width: 100"
-            data-label="Loading"
-          ></div>
-        </div>
+      <div class="down">
+        <div
+          class="progress-bar"
+          style="--width: 100"
+          data-label="00:00"
+        ></div>
       </div>
     </div>
   </body>

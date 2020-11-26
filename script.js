@@ -1,7 +1,9 @@
 const questionImage = document.getElementById("img-question");
 const answersImage = document.getElementById("img-answers");
 const currentQuestion = document.getElementById("current-question");
-const button = document.getElementById("capre");
+const button = document.getElementById("next");
+const scoreElement = document.getElementById("score");
+
 
 const CORRECT_ANSWERS = [
   undefined,
@@ -30,7 +32,6 @@ const CORRECT_ANSWERS = [
   "d",
   "c",
 ];
-const scoreElement = document.getElementById("score");
 
 let questionNumber = 1;
 let score = 0;
