@@ -19,26 +19,31 @@
         </div>
         <div class="line"></div>
         <div class="small-container">
-          <img class="img-question" id="img-question" />
-          <img class="img-answers" id="img-answers" />
-          <div class="radio">
-            <input type="radio" class="answer" id="a" name="answer" />
-            <input type="radio" class="answer" id="b" name="answer" />
-            <input type="radio" class="answer" id="c" name="answer" />
-            <input type="radio" class="answer" id="d" name="answer" />
-            <input type="radio" class="answer" id="e" name="answer" />
+          <div class="questions">
+            <div class="img-question-container">
+              <img class="img-question" id="img-question" />
+            </div>
+            <div class="img-answers-container">
+              <img class="img-answers" id="img-answers" />
+            </div>
+          </div>
+          <div class="my-selection">
+            <div class="radio">
+              <input type="radio" class="answer" id="a" name="answer" />
+              <input type="radio" class="answer" id="b" name="answer" />
+              <input type="radio" class="answer" id="c" name="answer" />
+              <input type="radio" class="answer" id="d" name="answer" />
+              <input type="radio" class="answer" id="e" name="answer" />
+            </div>
+            <div class="my-buttons">
+              <button class="raise" id="back">Back</button>
+              <button class="raise" id="next">Next</button>
+            </div>
           </div>
         </div>
-        <button class="raise" id="next">Next</button>
-        <div id="score"></div>
       </div>
-
       <div class="down">
-        <div
-          class="progress-bar"
-          style="--width: 100"
-          data-label="00:00"
-        ></div>
+        <div class="progress-bar" style="--width: 100" data-label="08:00"></div>
       </div>
     </div>
   </body>

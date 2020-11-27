@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap");
 
 @keyframes blink {
   0% {
@@ -62,7 +63,6 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
-  /* z-index: -1; */
 }
 
 .white-container {
@@ -85,13 +85,17 @@ body {
 .progress-bar {
   width: 65%;
   height: 80%;
-  background-color: black;
+  margin-left: 5px;
   border-radius: 20px;
-  color: black;
-  font-family: "Fredericka the Great", cursive;
-  font-weight: bold;
+
   display: flex;
   align-items: center;
+
+  background-color: black;
+  color: black;
+  font-size: 1.75vh;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: bolder;
 }
 
 .progress-bar::before {
@@ -100,26 +104,28 @@ body {
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   position: relative;
 
   height: 75%;
-  padding-left: 5px;
+  padding-left: 0.5vw;
   left: 2px;
 
-  min-width: 48px;
-  max-width: calc(100% - 1em);
+  min-width: 3.3vw;
+  max-width: calc(100% - 5px);
 
   animation: blink 60s infinite;
   border-radius: 20px;
 }
 
 .small-container {
+  width: 25%;
+  padding-top: 25%;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 20vw;
-  height: 40vh;
 }
 
 .line {
@@ -129,61 +135,113 @@ body {
   height: 60vh;
 }
 
-.img-question {
-  width: 12vw;
-  height: 12vw;
-}
-
-.img-answers {
-  padding-top: 7px;
-  border-top: 5px solid black;
-  margin: 30px;
-  margin-bottom: 8px;
-  width: 17vw;
-  height: 3.7vw;
-}
-
 .numbers {
   font-family: "Fredericka the Great", cursive;
-  font-size: 5vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 6vw;
 }
 
 .current {
   position: relative;
-  top: 8vh;
+  top: 5vw;
+  left: 6vw;
 }
 
 .slash {
   position: relative;
-  left: 4vh;
+  left: 11.5vw;
 }
 
 .total {
   position: relative;
-  left: 6vh;
-  bottom: 8vh;
+  bottom: 5vw;
+  left: 13vw;
+}
+
+.questions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+}
+
+.my-selection {
+  height: 10%;
+}
+
+.img-question-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16vw;
+  width: 16vw;
+}
+
+.img-question {
+  width: 15vw;
+}
+
+.img-answers-container {
+  margin-top: 0.5vw;
+  border-top: 0.3vw solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 23vw;
+  height: 5vw;
+}
+
+.img-answers {
+  width: 22vw;
+
+  padding-top: 0.5vw;
 }
 
 .radio {
-  width: 300px;
+  width: 22.7vw;
   display: flex;
   justify-content: space-between;
 }
 
-.raise:hover,
-.raise:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em black;
-  transform: translateY(-0.25em);
-  outline: 0;
+input[type="radio"] {
+  border: 0px;
+  width: 100%;
+  height: 1.1vw;
+  cursor: pointer;
+}
+
+.my-buttons {
+  display: flex;
+  justify-content: center;
 }
 
 button {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.5vw;
+  padding: 0.3vw;
+  margin: 0.1vw;
   background: none;
-  border: 2px solid;
-  font: inherit;
+  border: 0.2vw solid;
   line-height: 1;
-  margin: 0.5em;
-  padding: 1em 2em;
   transition: 0.25s;
   border-color: black;
+  user-select: none;
+}
+
+.raise:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em black;
+  transform: translateY(-0.25em);
+  outline: 0;
 }
