@@ -148,7 +148,7 @@ body {
 .current {
   position: relative;
   top: 5vw;
-  left: 6vw;
+  left: 5.5vw;
 }
 
 .slash {
@@ -173,10 +173,13 @@ body {
   align-items: center;
   justify-content: center;
   height: 90%;
+  z-index: 0;
 }
 
 .my-selection {
   height: 10%;
+  z-index: 1;
+  padding-bottom: 1vw;
 }
 
 .img-question-container {
@@ -210,21 +213,39 @@ body {
 }
 
 .radio {
-  width: 22.7vw;
+  width: 15vw;
   display: flex;
   justify-content: space-between;
 }
 
 input[type="radio"] {
-  border: 0px;
-  width: 100%;
-  height: 1.1vw;
+  display: none;
+}
+
+label::before {
+  content: "";
+  position: absolute;
+  height: 1.5vw;
+  width: 1.5vw;
+  border-radius: 50%;
+  border: 0.25vw solid black;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label::before {
+  content: "";
+  position: absolute;
+  height: 1.5vw;
+  width: 1.5vw;
+  border-radius: 50%;
+  background-color: black;
   cursor: pointer;
 }
 
 .my-buttons {
   display: flex;
   justify-content: center;
+  padding-top: 2vw;
 }
 
 button {
@@ -238,10 +259,15 @@ button {
   transition: 0.25s;
   border-color: black;
   user-select: none;
+  cursor: pointer;
 }
 
 .raise:hover {
   box-shadow: 0 0.5em 0.5em -0.4em black;
   transform: translateY(-0.25em);
+  outline: 0;
+}
+
+.raise:focus {
   outline: 0;
 }

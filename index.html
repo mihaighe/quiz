@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
     <script defer src="script.js"></script>
   </head>
   <body>
@@ -29,15 +34,25 @@
           </div>
           <div class="my-selection">
             <div class="radio">
-              <input type="radio" class="answer" id="a" name="answer" />
-              <input type="radio" class="answer" id="b" name="answer" />
-              <input type="radio" class="answer" id="c" name="answer" />
-              <input type="radio" class="answer" id="d" name="answer" />
-              <input type="radio" class="answer" id="e" name="answer" />
+              <input type="radio" class="answer" id="0" name="answer" /><label for="0"></label>
+              <input type="radio" class="answer" id="1" name="answer" /><label for="1"></label>
+              <input type="radio" class="answer" id="2" name="answer" /><label for="2"></label>
+              <input type="radio" class="answer" id="3" name="answer" /><label for="3"></label>
+              <input type="radio" class="answer" id="4" name="answer" /><label for="4"></label>
             </div>
             <div class="my-buttons">
-              <button class="raise" id="back">Back</button>
-              <button class="raise" id="next">Next</button>
+              <button class="raise" id="restart">
+                <i class="fas fa-redo-alt"></i>
+              </button>
+              <button class="raise" id="finish">
+                <i class="fas fa-check"></i>
+              </button>
+              <button class="raise" id="back">
+                <i class="fa fa-arrow-left"></i>
+              </button>
+              <button class="raise" id="next">
+                <i class="fa fa-arrow-right"></i>
+              </button>
             </div>
           </div>
         </div>
