@@ -107,12 +107,11 @@ body {
   justify-content: center;
   position: relative;
 
-  height: 75%;
+  height: 100%;
   padding-left: 0.5vw;
-  left: 2px;
 
-  min-width: 3.3vw;
-  max-width: calc(100% - 5px);
+  min-width: 55px;
+  max-width: 100%;
 
   animation: blink 60s infinite;
   border-radius: 20px;
@@ -178,7 +177,6 @@ body {
 
 .my-selection {
   height: 10%;
-  z-index: 1;
   padding-bottom: 1vw;
 }
 
@@ -213,9 +211,14 @@ body {
 }
 
 .radio {
-  width: 15vw;
+  padding-right: 1.5vw;
+  width: 19.5vw;
   display: flex;
   justify-content: space-between;
+}
+
+.radio.none {
+  pointer-events: none;
 }
 
 input[type="radio"] {
@@ -230,6 +233,18 @@ label::before {
   border-radius: 50%;
   border: 0.25vw solid black;
   cursor: pointer;
+}
+
+label.correct:before {
+  border: 0.25vw solid rgb(47, 206, 8)
+}
+
+label.white:before {
+  border: 0.25vw solid white;
+}
+
+label.black:before {
+  border: 0.25vw solid black;
 }
 
 input[type="radio"]:checked + label::before {
@@ -270,4 +285,54 @@ button {
 
 .raise:focus {
   outline: 0;
+}
+
+.modal-container {
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+}
+
+.modal-container.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal {
+  background-color: rgba(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 30px 50px;
+  width: 40vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 3vw;
+  margin: 0;
+}
+
+p {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.5vw;
+}
+
+.score {
+  font-size: 2vw;
+  margin-top: -4.3vw;
+  text-align: center;
 }
