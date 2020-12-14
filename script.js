@@ -68,6 +68,34 @@ let selected_answers = [
   undefined,
 ];
 
+let unselected_answers = [
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+];
+
 let questionNumber = 1;
 let score = 0;
 let timeLeft = 480;
