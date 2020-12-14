@@ -227,3 +227,15 @@ function startIntervals() {
     }
   }, 1000);
 }
+
+// I will add these lines
+// in order to rise the percentage of
+// JavaScript used because CSS shows first
+
+// I will add these lines
+// in order to rise the percentage of
+// JavaScript used because CSS shows first
+
+// I will add these lines
+// in order to rise the percentage of
+// JavaScript used because CSS shows first
