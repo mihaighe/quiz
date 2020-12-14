@@ -128,7 +128,6 @@ function restart() {
   finishButton.addEventListener("click", finish);
   radio.classList.remove("none");
 
-
   for (it = 1; it < selected_answers.length; it++) {
     selected_answers[it] = undefined;
   }
@@ -196,34 +195,34 @@ function getAnswer() {
   });
 }
 
+const computedStyle = getComputedStyle(progressBar);
+const width = parseFloat(computedStyle.getPropertyValue("--width"));
+
 function startIntervals() {
   animationInterval = setInterval(() => {
-    const computedStyle = getComputedStyle(progressBar);
-    const width = parseFloat(computedStyle.getPropertyValue("--width"));
-    progressBar.style.setProperty("--width", width - 0.1);
-
-    if (width < 0.1 || isDone == 1) {
-      clearInterval(animationInterval);
-      clearInterval(timeInterval);
-      
+    if (width > 0.1 && isDone == 0) {
+      const computedStyle = getComputedStyle(progressBar);
+      const width = parseFloat(computedStyle.getPropertyValue("--width"));
+      progressBar.style.setProperty("--width", width - 0.1);
+    } else {
+      finish();
     }
   }, 500);
 
   timeInterval = setInterval(() => {
-    timeLeft = timeLeft - 1;
-
-    minute = Math.floor(timeLeft / 60);
-    second = Math.floor(timeLeft % 60);
     console.log(isDone);
-    if (second < 10) {
-      second = `0${second}`;
-    }
 
-    time.attributes[2].nodeValue = `0${minute}:${second}`;
+    if (timeLeft > 1 && isDone == 0) {
+      timeLeft = timeLeft - 1;
 
-    if (timeLeft < 1 || isDone == 1) {
-      clearInterval(timeInterval);
-      clearInterval(animationInterval);
+      minute = Math.floor(timeLeft / 60);
+      second = Math.floor(timeLeft % 60);
+      if (second < 10) {
+        second = `0${second}`;
+      }
+
+      time.attributes[2].nodeValue = `0${minute}:${second}`;
+    } else {
       finish();
     }
   }, 1000);
