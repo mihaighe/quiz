@@ -7,7 +7,7 @@ const restartButton = document.getElementById("restart");
 const finishButton = document.getElementById("finish");
 const startButton = document.getElementById("start");
 const radio = document.getElementById("radio");
-const scoreElement = document.getElementById('score')
+const scoreElement = document.getElementById("score");
 
 const time = document.querySelector("[data-label]");
 const progressBar = document.getElementsByClassName("progress-bar")[0];
@@ -70,7 +70,7 @@ let selected_answers = [
 
 let questionNumber = 1;
 let score = 0;
-let timeLeft = 480;
+let timeLeft = 3;
 let isDone = false;
 
 loadQuestion();
@@ -83,6 +83,7 @@ startButton.addEventListener("click", function () {
 restartButton.addEventListener("click", function () {
   restart();
   loadQuestion();
+  scoreElement.innerHTML = "";
 });
 
 finishButton.addEventListener("click", finish);
@@ -116,7 +117,7 @@ function finish() {
   loadQuestion();
   radio.classList.add("none");
   finishButton.removeEventListener("click", finish);
-  scoreElement.innerText = `You correctly answered ${score} questions`
+  scoreElement.innerText = `You correctly answered ${score} questions`;
 }
 
 function restart() {
@@ -124,9 +125,9 @@ function restart() {
   timeLeft = 480;
   questionNumber = 1;
   isDone = false;
-
-  startIntervals();
   finishButton.addEventListener("click", finish);
+  radio.classList.remove("none");
+
 
   for (it = 1; it < selected_answers.length; it++) {
     selected_answers[it] = undefined;
@@ -139,7 +140,6 @@ function restart() {
     answers[it].checked = false;
     labels[it].classList.remove("white");
     labels[it].classList.remove("correct");
-
   }
 
   time.attributes[2].nodeValue = `07:59`;
@@ -172,7 +172,7 @@ function loadQuestion() {
       } else if (it == submited) {
         el.classList.remove("correct");
         el.classList.remove("white");
-        el.classList.add('black')
+        el.classList.add("black");
       } else {
         el.classList.remove("correct");
         el.classList.remove("black");
@@ -204,6 +204,8 @@ function startIntervals() {
 
     if (width < 0.1 || isDone == 1) {
       clearInterval(animationInterval);
+      clearInterval(timeInterval);
+      
     }
   }, 500);
 
@@ -212,19 +214,17 @@ function startIntervals() {
 
     minute = Math.floor(timeLeft / 60);
     second = Math.floor(timeLeft % 60);
-
+    console.log(isDone);
     if (second < 10) {
       second = `0${second}`;
     }
 
-    console.log(minute);
-    console.log(second);
     time.attributes[2].nodeValue = `0${minute}:${second}`;
 
     if (timeLeft < 1 || isDone == 1) {
       clearInterval(timeInterval);
       clearInterval(animationInterval);
-      finish()
+      finish();
     }
   }, 1000);
 }
