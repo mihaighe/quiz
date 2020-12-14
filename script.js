@@ -70,7 +70,7 @@ let selected_answers = [
 
 let questionNumber = 1;
 let score = 0;
-let timeLeft = 3;
+let timeLeft = 480;
 let isDone = false;
 
 loadQuestion();
