@@ -98,7 +98,7 @@ let unselected_answers = [
 
 let questionNumber = 1;
 let score = 0;
-let timeLeft = 480;
+let timeLeft = 10;
 let isDone = false;
 
 loadQuestion();
@@ -233,14 +233,12 @@ function startIntervals() {
       const width = parseFloat(computedStyle.getPropertyValue("--width"));
       progressBar.style.setProperty("--width", width - 0.1);
     } else {
-      finish();
+      isDone = 1;
     }
   }, 500);
 
   timeInterval = setInterval(() => {
-    console.log(isDone);
-
-    if (timeLeft > 1 && isDone == 0) {
+    if (timeLeft > 0 && isDone == 0) {
       timeLeft = timeLeft - 1;
 
       minute = Math.floor(timeLeft / 60);
@@ -248,10 +246,9 @@ function startIntervals() {
       if (second < 10) {
         second = `0${second}`;
       }
-
       time.attributes[2].nodeValue = `0${minute}:${second}`;
     } else {
-      finish();
+      isDone = 1;
     }
   }, 1000);
 }
