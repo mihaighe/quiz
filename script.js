@@ -98,7 +98,7 @@ let unselected_answers = [
 
 let questionNumber = 1;
 let score = 0;
-let timeLeft = 10;
+let timeLeft = 480;
 let isDone = false;
 
 loadQuestion();
