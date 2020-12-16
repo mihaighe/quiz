@@ -232,6 +232,8 @@ function startIntervals() {
       const computedStyle = getComputedStyle(progressBar);
       const width = parseFloat(computedStyle.getPropertyValue("--width"));
       progressBar.style.setProperty("--width", width - 0.1);
+    } else if (width == 0.1) {
+      finish();
     } else {
       isDone = 1;
     }
@@ -247,6 +249,8 @@ function startIntervals() {
         second = `0${second}`;
       }
       time.attributes[2].nodeValue = `0${minute}:${second}`;
+    } else if (timeLeft == 0) {
+      finish();
     } else {
       isDone = 1;
     }
