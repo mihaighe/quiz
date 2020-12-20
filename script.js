@@ -141,6 +141,7 @@ function finish() {
     }
   }
 
+  timeLeft = -10;
   isDone = true;
   loadQuestion();
   radio.classList.add("none");
@@ -240,16 +241,18 @@ function startIntervals() {
   }, 500);
 
   timeInterval = setInterval(() => {
-    if (timeLeft > 0 && isDone == 0) {
-      timeLeft = timeLeft - 1;
+    console.log(`is done: ${isDone}`);
+    console.log(`time left: ${timeLeft}`);
+    timeLeft = timeLeft - 1;
 
+    if (timeLeft > -1 && isDone == 0) {
       minute = Math.floor(timeLeft / 60);
       second = Math.floor(timeLeft % 60);
       if (second < 10) {
         second = `0${second}`;
       }
       time.attributes[2].nodeValue = `0${minute}:${second}`;
-    } else if (timeLeft == 0) {
+    } else if (timeLeft == -1) {
       finish();
     } else {
       isDone = 1;
